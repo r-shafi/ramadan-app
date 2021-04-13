@@ -1,0 +1,11 @@
+<div *ngIf="times">
+  <div *ngFor="let data of times.data">
+    <div *ngIf="data.date.readable === today">
+      <p>
+        {{ data.date.hijri.month.en }} {{ formatDate(data.date.hijri.date) }}
+      </p>
+      <p class="fazr">{{ formatFazr(data.timings.Fajr) }}am</p>
+      <p class="maghrib">0{{ formatMaghrib(data.timings.Maghrib) }}pm</p>
+    </div>
+  </div>
+</div>
