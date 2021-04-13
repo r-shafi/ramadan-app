@@ -9,7 +9,7 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class FetchTimesService {
   API =
-    'http://api.aladhan.com/v1/hijriCalendarByCity?city=Sylhet&country=Bangladesh';
+    'https://api.aladhan.com/v1/hijriCalendarByCity?city=Sylhet&country=Bangladesh';
 
   constructor(private http: HttpClient) {}
 
