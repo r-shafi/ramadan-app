@@ -20,7 +20,6 @@ export class TimesComponent implements OnInit {
   retrieveTimes() {
     this.fetchTimes.getTimes().subscribe((data) => {
       this.times = data;
-      console.log(data);
     });
   }
 

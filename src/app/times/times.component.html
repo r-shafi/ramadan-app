@@ -1,11 +1,20 @@
 <div *ngIf="times">
   <div *ngFor="let data of times.data">
-    <div *ngIf="data.date.readable === today">
-      <p>
-        {{ data.date.hijri.month.en }} {{ formatDate(data.date.hijri.date) }}
-      </p>
-      <p class="fazr">{{ formatFazr(data.timings.Fajr) }}am</p>
-      <p class="maghrib">0{{ formatMaghrib(data.timings.Maghrib) }}pm</p>
+    <div *ngIf="data.date.readable === today" class="times">
+      <div>
+        <h2>
+          {{ data.date.hijri.month.en }} {{ formatDate(data.date.hijri.date) }}
+        </h2>
+      </div>
+      <div class="fazr">
+        <p>Sehri ends at:</p>
+        <h2>{{ formatFazr(data.timings.Fajr) }}am</h2>
+      </div>
+      <div class="maghrib">
+        <p>Iftar:</p>
+        <h2>0{{ formatMaghrib(data.timings.Maghrib) }}pm</h2>
+      </div>
     </div>
   </div>
 </div>
+<h4 *ngIf="!times">Fetching Times...</h4>
