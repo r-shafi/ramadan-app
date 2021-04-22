@@ -8,12 +8,12 @@ export class FetchSurahService {
   constructor(private Http: HttpClient) {}
 
   surahList() {
-    return this.Http.get('http://api.alquran.cloud/v1/surah');
+    return this.Http.get('https://api.alquran.cloud/v1/surah');
   }
 
   getSingleSurah(surah) {
     return this.Http.get(
-      `http://api.alquran.cloud/v1/surah/${surah}/ar.alafasy`
+      `https://api.alquran.cloud/v1/surah/${surah}/ar.alafasy`
     );
   }
 }

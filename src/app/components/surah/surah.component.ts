@@ -26,7 +26,6 @@ export class SurahComponent implements OnInit {
   getSurah(surahNumber) {
     this.fetchSurah.getSingleSurah(surahNumber).subscribe((data) => {
       this.surah = data['data'];
-      console.log(data['data']);
     });
   }
 }
