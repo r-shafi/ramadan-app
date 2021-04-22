@@ -1,0 +1,19 @@
+<div class="surah-component">
+  <p *ngIf="!surahList">Loading...</p>
+
+  <div *ngIf="surahList" class="surahlist">
+    <div *ngFor="let surah of surahList">
+      <p (click)="getSurah(surah.number)">
+        {{ surah.number }} - {{ surah.name }}
+      </p>
+    </div>
+  </div>
+
+  <div *ngIf="surah" class="surah">
+    <h1>{{ surah.englishName }}</h1>
+    <div class="surah-text" *ngFor="let ayah of surah.ayahs">
+      <p>{{ ayah.text }}</p>
+      <audio [src]="ayah.audio" controls></audio>
+    </div>
+  </div>
+</div>
